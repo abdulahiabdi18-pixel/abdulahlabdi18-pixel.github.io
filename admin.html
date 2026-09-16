@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -66,6 +67,17 @@
       width: 100%;
       background: #111827;
       color: white;
+    }
+
+    .login-btn:hover {
+      background: #374151;
+    }
+
+    #loginMessage {
+      margin-top: 15px;
+      margin-bottom: 0;
+      color: #dc2626;
+      font-weight: bold;
     }
 
     .dashboard {
@@ -180,597 +192,596 @@
       }
     }
   </style>
+
 </head>
 
 <body>
 
-<!-- LOGIN -->
+<!-- ================= LOGIN ================= -->
+
 <div class="login" id="loginPage">
 
   <div class="login-box">
 
-    <h1>🔐 Admin Login</h1>
+```
+<h1>🔐 Admin Login</h1>
 
-    <p>Abdulahi Abdi IT Support</p>
+<p>Abdulahi Abdi IT Support</p>
 
-    <input
-      type="text"
-      id="username"
-      placeholder="Username"
-    >
+<input
+  type="text"
+  id="username"
+  placeholder="Username"
+  autocomplete="username"
+>
 
-    <input
-      type="password"
-      id="password"
-      placeholder="Password"
-    >
+<input
+  type="password"
+  id="password"
+  placeholder="Password"
+  autocomplete="current-password"
+>
 
-    <button class="login-btn" onclick="login()">
-      Login
-    </button>
+<button class="login-btn" type="button" onclick="login()">
+  Login
+</button>
 
-    <p id="loginMessage"></p>
+<p id="loginMessage"></p>
+```
 
   </div>
 
 </div>
 
+<!-- ================= DASHBOARD ================= -->
 
-<!-- DASHBOARD -->
 <div class="dashboard" id="dashboard">
 
   <aside class="sidebar">
 
-    <h2>💻 IT Support</h2>
+```
+<h2>💻 IT Support</h2>
 
-    <button onclick="showPanel('home')">
-      📊 Dashboard
-    </button>
+<button onclick="showPanel('home')">
+  📊 Dashboard
+</button>
 
-    <button onclick="showPanel('services')">
-      🛠️ Services
-    </button>
+<button onclick="showPanel('services')">
+  🛠️ Services
+</button>
 
-    <button onclick="showPanel('pricing')">
-      💰 Pricing
-    </button>
+<button onclick="showPanel('pricing')">
+  💰 Pricing
+</button>
 
-    <button onclick="showPanel('about')">
-      👤 About Me
-    </button>
+<button onclick="showPanel('about')">
+  👤 About Me
+</button>
 
-    <button onclick="showPanel('reviews')">
-      ⭐ Reviews
-    </button>
+<button onclick="showPanel('reviews')">
+  ⭐ Reviews
+</button>
 
-    <button onclick="showPanel('contact')">
-      📞 Contact
-    </button>
+<button onclick="showPanel('contact')">
+  📞 Contact
+</button>
 
-    <button onclick="showPanel('settings')">
-      ⚙️ Settings
-    </button>
+<button onclick="showPanel('settings')">
+  ⚙️ Settings
+</button>
+```
 
   </aside>
 
-
   <main class="main">
 
-    <div class="top">
+```
+<div class="top">
 
-      <h1>Admin Dashboard</h1>
+  <h1>Admin Dashboard</h1>
 
-      <button class="logout" onclick="logout()">
-        Logout
-      </button>
+  <button class="logout" onclick="logout()">
+    Logout
+  </button>
 
+</div>
+
+
+<!-- HOME -->
+
+<section class="panel active" id="home">
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Services</h3>
+      <strong>6</strong>
     </div>
 
+    <div class="card">
+      <h3>Reviews</h3>
+      <strong id="reviewCount">0</strong>
+    </div>
 
-    <!-- DASHBOARD HOME -->
+    <div class="card">
+      <h3>Messages</h3>
+      <strong>0</strong>
+    </div>
 
-    <section class="panel active" id="home">
+    <div class="card">
+      <h3>Website</h3>
+      <strong>✓</strong>
+    </div>
 
-      <div class="cards">
+  </div>
 
-        <div class="card">
-          <h3>Services</h3>
-          <strong>6</strong>
-        </div>
+  <h2>Welcome, Abdulahi 👋</h2>
 
-        <div class="card">
-          <h3>Reviews</h3>
-          <strong>0</strong>
-        </div>
+  <p style="margin-top:10px;">
+    From here you can manage your IT Support website.
+  </p>
 
-        <div class="card">
-          <h3>Messages</h3>
-          <strong>0</strong>
-        </div>
+</section>
 
-        <div class="card">
-          <h3>Website</h3>
-          <strong>✓</strong>
-        </div>
 
-      </div>
+<!-- SERVICES -->
 
-      <h2>Welcome, Abdulahi 👋</h2>
+<section class="panel" id="services">
 
-      <p style="margin-top:10px;">
-        From here you can manage your IT Support website.
-      </p>
+  <h2>🛠️ Manage Services</h2>
 
-    </section>
+  <input id="service1" value="Computer Repair">
+  <input id="service2" value="Windows Support">
+  <input id="service3" value="Network Support">
+  <input id="service4" value="Cyber Security">
+  <input id="service5" value="Cloud & Backup">
+  <input id="service6" value="IT Helpdesk">
 
+  <button class="save" onclick="saveServices()">
+    Save Services
+  </button>
 
-    <!-- SERVICES -->
+</section>
 
-    <section class="panel" id="services">
 
-      <h2>🛠️ Manage Services</h2>
+<!-- PRICING -->
 
-      <input
-        id="service1"
-        value="Computer Repair"
-      >
+<section class="panel" id="pricing">
 
-      <input
-        id="service2"
-        value="Windows Support"
-      >
+  <h2>💰 Manage Pricing</h2>
 
-      <input
-        id="service3"
-        value="Network Support"
-      >
+  <label>Quick Help</label>
+  <input id="price1" value="299 SEK">
 
-      <input
-        id="service4"
-        value="Cyber Security"
-      >
+  <label>IT Support</label>
+  <input id="price2" value="599 SEK">
 
-      <input
-        id="service5"
-        value="Cloud & Backup"
-      >
+  <label>Business</label>
+  <input id="price3" value="Custom">
 
-      <input
-        id="service6"
-        value="IT Helpdesk"
-      >
+  <button class="save" onclick="savePricing()">
+    Save Pricing
+  </button>
 
-      <button class="save" onclick="saveServices()">
-        Save Services
-      </button>
+</section>
 
-    </section>
 
+<!-- ABOUT -->
 
-    <!-- PRICING -->
+<section class="panel" id="about">
 
-    <section class="panel" id="pricing">
+  <h2>👤 About Me</h2>
 
-      <h2>💰 Manage Pricing</h2>
+  <textarea id="aboutText" rows="8">Professional IT Support for individuals and small businesses.</textarea>
 
-      <label>Quick Help</label>
+  <button class="save" onclick="saveAbout()">
+    Save About Me
+  </button>
 
-      <input
-        id="price1"
-        value="299 SEK"
-      >
+</section>
 
-      <label>IT Support</label>
 
-      <input
-        id="price2"
-        value="599 SEK"
-      >
+<!-- REVIEWS -->
 
-      <label>Business</label>
+<section class="panel" id="reviews">
 
-      <input
-        id="price3"
-        value="Custom"
-      >
+  <h2>⭐ Customer Reviews</h2>
 
-      <button class="save" onclick="savePricing()">
-        Save Pricing
-      </button>
+  <input
+    id="reviewName"
+    placeholder="Customer name"
+  >
 
-    </section>
+  <textarea
+    id="reviewText"
+    rows="5"
+    placeholder="Customer review"
+  ></textarea>
 
+  <button class="save" onclick="addReview()">
+    Add Review
+  </button>
 
-    <!-- ABOUT -->
+  <div id="reviewList" style="margin-top:25px;"></div>
 
-    <section class="panel" id="about">
+</section>
 
-      <h2>👤 About Me</h2>
 
-      <textarea
-        id="aboutText"
-        rows="8"
-      >Professional IT Support for individuals and small businesses.</textarea>
+<!-- CONTACT -->
 
-      <button class="save" onclick="saveAbout()">
-        Save About Me
-      </button>
+<section class="panel" id="contact">
 
-    </section>
+  <h2>📞 Contact Information</h2>
 
+  <label>WhatsApp</label>
+  <input id="whatsapp" value="+46 73 693 69 79">
 
-    <!-- REVIEWS -->
+  <label>Phone</label>
+  <input id="phone" value="+46 73 693 69 79">
 
-    <section class="panel" id="reviews">
+  <label>Email</label>
+  <input id="email" placeholder="your-email@example.com">
 
-      <h2>⭐ Customer Reviews</h2>
+  <label>Location</label>
+  <input id="location" value="Göteborg, Sweden">
 
-      <input
-        id="reviewName"
-        placeholder="Customer name"
-      >
+  <button class="save" onclick="saveContact()">
+    Save Contact
+  </button>
 
-      <textarea
-        id="reviewText"
-        rows="5"
-        placeholder="Customer review"
-      ></textarea>
+</section>
 
-      <button class="save" onclick="addReview()">
-        Add Review
-      </button>
 
-      <div id="reviewList" style="margin-top:25px;"></div>
+<!-- SETTINGS -->
 
-    </section>
+<section class="panel" id="settings">
 
+  <h2>⚙️ Website Settings</h2>
 
-    <!-- CONTACT -->
+  <label>Website Name</label>
 
-    <section class="panel" id="contact">
+  <input
+    id="siteName"
+    value="Abdulahi Abdi IT Support"
+  >
 
-      <h2>📞 Contact Information</h2>
+  <label>Language</label>
 
-      <label>WhatsApp</label>
+  <select id="language">
+    <option>English</option>
+    <option>Swedish</option>
+    <option>Somali</option>
+  </select>
 
-      <input
-        id="whatsapp"
-        value="+46 73 693 69 79"
-      >
+  <button class="save" onclick="saveSettings()">
+    Save Settings
+  </button>
 
-      <label>Phone</label>
-
-      <input
-        id="phone"
-        value="+46 73 693 69 79"
-      >
-
-      <label>Email</label>
-
-      <input
-        id="email"
-        placeholder="your-email@example.com"
-      >
-
-      <label>Location</label>
-
-      <input
-        id="location"
-        value="Göteborg, Sweden"
-      >
-
-      <button class="save" onclick="saveContact()">
-        Save Contact
-      </button>
-
-    </section>
-
-
-    <!-- SETTINGS -->
-
-    <section class="panel" id="settings">
-
-      <h2>⚙️ Website Settings</h2>
-
-      <label>Website Name</label>
-
-      <input
-        id="siteName"
-        value="Abdulahi Abdi IT Support"
-      >
-
-      <label>Language</label>
-
-      <select id="language">
-        <option>English</option>
-        <option>Swedish</option>
-        <option>Somali</option>
-      </select>
-
-      <button class="save" onclick="saveSettings()">
-        Save Settings
-      </button>
-
-    </section>
+</section>
+```
 
   </main>
 
 </div>
 
-
 <script>
 
+/* =========================================
+   ADMIN LOGIN
+   Username: admin
+   Password: 123456
+========================================= */
+
+function login() {
+
+  const username =
+    document.getElementById("username").value.trim();
+
+  const password =
+    document.getElementById("password").value.trim();
+
+  const message =
+    document.getElementById("loginMessage");
+
+  if (username === "admin" && password === "123456") {
+
+    message.innerText = "";
+
+    document.getElementById("loginPage").style.display = "none";
+
+    document.getElementById("dashboard").style.display = "block";
+
+    sessionStorage.setItem("adminLoggedIn", "true");
+
+    loadReviews();
+
+  } else {
+
+    message.innerText =
+      "❌ Wrong username or password";
+
+  }
+
+}
+
+
+/* ENTER KEY LOGIN */
+
+document.getElementById("password").addEventListener("keydown", function(event) {
+
+  if (event.key === "Enter") {
+    login();
+  }
+
+});
+
+
+/* LOGOUT */
+
+function logout() {
+
+  sessionStorage.removeItem("adminLoggedIn");
+
+  document.getElementById("dashboard").style.display = "none";
+
+  document.getElementById("loginPage").style.display = "flex";
+
+  document.getElementById("username").value = "";
+
+  document.getElementById("password").value = "";
+
+}
+
+
+/* PANEL */
+
+function showPanel(panel) {
+
+  document.querySelectorAll(".panel")
+    .forEach(p => p.classList.remove("active"));
+
+  document.getElementById(panel)
+    .classList.add("active");
+
+}
+
+
+/* SERVICES */
+
+function saveServices() {
+
+  for (let i = 1; i <= 6; i++) {
+
+    localStorage.setItem(
+      "service" + i,
+      document.getElementById("service" + i).value
+    );
+
+  }
+
+  alert("Services saved!");
+
+}
+
+
+/* PRICING */
+
+function savePricing() {
+
+  for (let i = 1; i <= 3; i++) {
+
+    localStorage.setItem(
+      "price" + i,
+      document.getElementById("price" + i).value
+    );
+
+  }
+
+  alert("Pricing saved!");
+
+}
+
+
+/* ABOUT */
+
+function saveAbout() {
+
+  localStorage.setItem(
+    "aboutText",
+    document.getElementById("aboutText").value
+  );
+
+  alert("About Me saved!");
+
+}
+
+
+/* CONTACT */
+
+function saveContact() {
+
+  localStorage.setItem(
+    "whatsapp",
+    document.getElementById("whatsapp").value
+  );
+
+  localStorage.setItem(
+    "phone",
+    document.getElementById("phone").value
+  );
+
+  localStorage.setItem(
+    "email",
+    document.getElementById("email").value
+  );
+
+  localStorage.setItem(
+    "location",
+    document.getElementById("location").value
+  );
+
+  alert("Contact information saved!");
+
+}
+
+
+/* SETTINGS */
+
+function saveSettings() {
+
+  localStorage.setItem(
+    "siteName",
+    document.getElementById("siteName").value
+  );
+
+  localStorage.setItem(
+    "language",
+    document.getElementById("language").value
+  );
+
+  alert("Settings saved!");
+
+}
+
+
+/* ADD REVIEW */
+
+function addReview() {
+
+  const name =
+    document.getElementById("reviewName").value.trim();
+
+  const text =
+    document.getElementById("reviewText").value.trim();
+
+  if (!name || !text) {
+
+    alert("Please enter customer name and review.");
+
+    return;
+
+  }
+
+  const reviews =
+    JSON.parse(localStorage.getItem("reviews") || "[]");
+
+  reviews.push({
+    name: name,
+    text: text
+  });
+
+  localStorage.setItem(
+    "reviews",
+    JSON.stringify(reviews)
+  );
+
+  document.getElementById("reviewName").value = "";
+
+  document.getElementById("reviewText").value = "";
+
+  loadReviews();
+
+}
+
+
+/* LOAD REVIEWS */
+
+function loadReviews() {
+
+  const reviews =
+    JSON.parse(localStorage.getItem("reviews") || "[]");
+
+  const list =
+    document.getElementById("reviewList");
+
+  const count =
+    document.getElementById("reviewCount");
+
+  count.innerText = reviews.length;
+
+  list.innerHTML = "";
+
+  reviews.forEach((review, index) => {
+
+    list.innerHTML += `
+
+      <div style="
+        padding:15px;
+        margin-bottom:10px;
+        background:#f4f6f8;
+        border-radius:8px;
+      ">
+
+        <strong>${escapeHTML(review.name)}</strong>
+
+        <p style="margin-top:8px;">
+          ${escapeHTML(review.text)}
+        </p>
+
+        <button
+          onclick="deleteReview(${index})"
+          style="
+            background:#dc2626;
+            color:white;
+            margin-top:10px;
+          "
+        >
+          Delete
+        </button>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+
+/* DELETE REVIEW */
+
+function deleteReview(index) {
+
+  const reviews =
+    JSON.parse(localStorage.getItem("reviews") || "[]");
+
+  reviews.splice(index, 1);
+
+  localStorage.setItem(
+    "reviews",
+    JSON.stringify(reviews)
+  );
+
+  loadReviews();
+
+}
+
+
+/* BASIC HTML SECURITY */
+
+function escapeHTML(text) {
+
+  const div = document.createElement("div");
+
+  div.textContent = text;
+
+  return div.innerHTML;
+
+}
+
+
+/* PAGE LOAD */
+
+window.onload = function() {
+
+  loadReviews();
+
   /*
-    TEMPORARY ADMIN LOGIN
-
-    Username:
-    admin
-
-    Password:
-    123456
+    We intentionally do NOT automatically log in.
+    Every page visit shows the login screen.
   */
 
-  function login() {
-
-    const username =
-      document.getElementById("username").value;
-
-    const password =
-      document.getElementById("password").value;
-
-    if (
-      username === "admin" &&
-      password === "123456"
-    ) {
-
-      document.getElementById("loginPage").style.display = "none";
-
-      document.getElementById("dashboard").style.display = "block";
-
-    } else {
-
-      document.getElementById("loginMessage").innerText =
-        "❌ Wrong username or password";
-
-    }
-
-  }
-
-
-  function logout() {
-
-    document.getElementById("dashboard").style.display = "none";
-
-    document.getElementById("loginPage").style.display = "flex";
-
-  }
-
-
-  function showPanel(panel) {
-
-    document.querySelectorAll(".panel")
-      .forEach(p => p.classList.remove("active"));
-
-    document.getElementById(panel)
-      .classList.add("active");
-
-  }
-
-
-  function saveServices() {
-
-    localStorage.setItem(
-      "service1",
-      document.getElementById("service1").value
-    );
-
-    localStorage.setItem(
-      "service2",
-      document.getElementById("service2").value
-    );
-
-    localStorage.setItem(
-      "service3",
-      document.getElementById("service3").value
-    );
-
-    localStorage.setItem(
-      "service4",
-      document.getElementById("service4").value
-    );
-
-    localStorage.setItem(
-      "service5",
-      document.getElementById("service5").value
-    );
-
-    localStorage.setItem(
-      "service6",
-      document.getElementById("service6").value
-    );
-
-    alert("Services saved!");
-
-  }
-
-
-  function savePricing() {
-
-    localStorage.setItem(
-      "price1",
-      document.getElementById("price1").value
-    );
-
-    localStorage.setItem(
-      "price2",
-      document.getElementById("price2").value
-    );
-
-    localStorage.setItem(
-      "price3",
-      document.getElementById("price3").value
-    );
-
-    alert("Pricing saved!");
-
-  }
-
-
-  function saveAbout() {
-
-    localStorage.setItem(
-      "aboutText",
-      document.getElementById("aboutText").value
-    );
-
-    alert("About Me saved!");
-
-  }
-
-
-  function saveContact() {
-
-    localStorage.setItem(
-      "whatsapp",
-      document.getElementById("whatsapp").value
-    );
-
-    localStorage.setItem(
-      "phone",
-      document.getElementById("phone").value
-    );
-
-    localStorage.setItem(
-      "email",
-      document.getElementById("email").value
-    );
-
-    localStorage.setItem(
-      "location",
-      document.getElementById("location").value
-    );
-
-    alert("Contact information saved!");
-
-  }
-
-
-  function saveSettings() {
-
-    localStorage.setItem(
-      "siteName",
-      document.getElementById("siteName").value
-    );
-
-    localStorage.setItem(
-      "language",
-      document.getElementById("language").value
-    );
-
-    alert("Settings saved!");
-
-  }
-
-
-  function addReview() {
-
-    const name =
-      document.getElementById("reviewName").value;
-
-    const text =
-      document.getElementById("reviewText").value;
-
-    if (!name || !text) {
-
-      alert("Please enter customer name and review.");
-
-      return;
-
-    }
-
-    const reviews =
-      JSON.parse(localStorage.getItem("reviews") || "[]");
-
-    reviews.push({
-      name: name,
-      text: text
-    });
-
-    localStorage.setItem(
-      "reviews",
-      JSON.stringify(reviews)
-    );
-
-    document.getElementById("reviewName").value = "";
-    document.getElementById("reviewText").value = "";
-
-    loadReviews();
-
-  }
-
-
-  function loadReviews() {
-
-    const reviews =
-      JSON.parse(localStorage.getItem("reviews") || "[]");
-
-    const list =
-      document.getElementById("reviewList");
-
-    list.innerHTML = "";
-
-    reviews.forEach((review, index) => {
-
-      list.innerHTML += `
-        <div style="
-          padding:15px;
-          margin-bottom:10px;
-          background:#f4f6f8;
-          border-radius:8px;
-        ">
-          <strong>${review.name}</strong>
-
-          <p style="margin-top:8px;">
-            ${review.text}
-          </p>
-
-          <button
-            onclick="deleteReview(${index})"
-            style="background:#dc2626;color:white;margin-top:10px;"
-          >
-            Delete
-          </button>
-
-        </div>
-      `;
-
-    });
-
-  }
-
-
-  function deleteReview(index) {
-
-    const reviews =
-      JSON.parse(localStorage.getItem("reviews") || "[]");
-
-    reviews.splice(index, 1);
-
-    localStorage.setItem(
-      "reviews",
-      JSON.stringify(reviews)
-    );
-
-    loadReviews();
-
-  }
-
-
-  window.onload = function() {
-
-    loadReviews();
-
-  };
+};
 
 </script>
 
